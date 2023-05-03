@@ -34,7 +34,7 @@ public class AvroGenerator : IIncrementalGenerator
 
         initContext.RegisterSourceOutput(schemaFileNameAndContents,
             static (spc, nameAndContent) =>
-                spc.AddSource($"AvroGeneratedSchemas.{nameAndContent.name}",
+                spc.AddSource($"AvroGeneratedSchemas.{nameAndContent.name.Replace("-", "")}",
                     AvroUtils.GenerateSourceCode(nameAndContent.content)));
     }
 }

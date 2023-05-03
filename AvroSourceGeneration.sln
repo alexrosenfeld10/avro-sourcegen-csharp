@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratedModels", "GeneratedModels\GeneratedModels.csproj", "{53883DF1-E918-4331-BA30-62D9556DD47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvroSourceGenerator", "AvroSourceGenerator\AvroSourceGenerator.csproj", "{FED39AE7-558E-488D-AC87-6D6491FC9217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratedModelsTests", "GeneratedModelsTests\GeneratedModelsTests.csproj", "{ED5F9849-920C-4D7C-A3F5-0E0FFE552E73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53883DF1-E918-4331-BA30-62D9556DD47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53883DF1-E918-4331-BA30-62D9556DD47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53883DF1-E918-4331-BA30-62D9556DD47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53883DF1-E918-4331-BA30-62D9556DD47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED39AE7-558E-488D-AC87-6D6491FC9217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED39AE7-558E-488D-AC87-6D6491FC9217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED39AE7-558E-488D-AC87-6D6491FC9217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED39AE7-558E-488D-AC87-6D6491FC9217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5F9849-920C-4D7C-A3F5-0E0FFE552E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5F9849-920C-4D7C-A3F5-0E0FFE552E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5F9849-920C-4D7C-A3F5-0E0FFE552E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5F9849-920C-4D7C-A3F5-0E0FFE552E73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -12,8 +12,22 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all"/>
         <PackageReference Include="H.Generators.Extensions" Version="1.11.0" PrivateAssets="all"/>
-        
-<!--        replace this with https://github.com/alfhv/avro for testing-->
-        <PackageReference Include="Apache.Avro" Version="1.11.1" PrivateAssets="all"/>
+
+        <!-- <PackageReference Include="Apache.Avro" Version="1.11.1" PrivateAssets="all" />-->
+
+        <!-- This "2.0.0-local" version is a locally packaged and published version of the 
+            https://github.com/alfhv/avro fork, created by running from the fork's avro/lang/csharp directory:
+            
+            dotnet pack -c Release -o ./packages -p:PackageVersion="2.0.0-local" src/apache/main/Avro.main.csproj
+            for nupkg in packages/*.nupkg
+            do
+                nuget add "$nupkg" -source ~/.nuget/custom-local-packages
+            done
+
+        for this to work, ensure you include:
+            <add key="custom-locals" value="~/.nuget/custom-local-packages" />
+        as a <packageSources> element in your ~/.nuget/NuGet/NuGet.Config file
+        -->
+        <PackageReference Include="Apache.Avro" Version="2.0.0-local" PrivateAssets="all"/>
     </ItemGroup>
 </Project>

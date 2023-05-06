@@ -5,11 +5,21 @@ cross-file references to shared types.
 
 ## Setup
 
-Running `dotnet build` will work out of the box. To replicate the issue, please see the xml comment above
-the `_avroSchemasToGenerate` field in the [`AvroGenerator`](AvroSourceGenerator/AvroGenerator.cs) class.
+### Unit tests
 
-To test this against `alfhv`'s fork (https://github.com/alfhv/avro), you will need to modify the dependencies in
-the [AvroSourceGenerator.csproj](AvroSourceGenerator/AvroSourceGenerator.csproj) file
+This won't work out of the box. You'll need to package and publish a local version of the https://github.com/alfhv/avro
+fork in order to test this.
+Please follow the steps found in the [`AvroSourceGenerator.csproj`](AvroSourceGenerator/AvroSourceGenerator.csproj) file
+to do so.
+
+After creating your `2.0.0-local` version of `Apache.Avro`, run `dotnet test` to see the issue. The test will fail,
+because the `PlanetEnum` has been generated twice.
+
+### Source generator
+
+If you'd like to see the same failure replicated via C# Source Generation (instead of unit tests), simply
+comment back in either (or both) of the models found in the `_avroSchemasToGenerate` field in the
+[`AvroGenerator`](AvroSourceGenerator/AvroGenerator.cs) class.
 
 ## Related links
 

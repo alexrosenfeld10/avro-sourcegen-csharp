@@ -11,7 +11,7 @@
       "name": "Planets",
       "type": {
         "type": "array",
-        "items": "Space.Models.Planet.PlanetEnum"
+        "items": "Space.Models.PlanetEnum"
       }
     }
   ]

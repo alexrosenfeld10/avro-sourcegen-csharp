@@ -22,7 +22,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\AvroSourceGenerator\AvroSourceGenerator.csproj" />
         <ProjectReference Include="..\GeneratedModels\GeneratedModels.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="../models/*" CopyToOutputDirectory="Always" />
     </ItemGroup>
     
 </Project>

@@ -7,13 +7,16 @@ namespace AvroSourceGenerator;
 
 public static class AvroUtils
 {
+    private static readonly SchemaNames SchemaNames = new();
+    
     public static string GenerateSourceCode(string schemaText)
     {
+        var schema = Schema.Parse(schemaText, SchemaNames);
         var codeCompileUnit = new CodeGen
         {
             Schemas =
             {
-                Schema.Parse(schemaText)
+                schema
             }
         }.GenerateCode();
 

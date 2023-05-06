@@ -17,7 +17,12 @@ public class AvroGenerator : IIncrementalGenerator
     private readonly IEnumerable<string> _avroSchemasToGenerate = new HashSet<string>
     {
         "planet-enum",
+        
+        // commented out for simplicity's sake. Just generate two for now, to keep things simple while debugging the avro fork.
         // "solar-system-model",
+        
+        // This is commented out to make the generator succeed so that the unit tests can be run.
+        // To test the source generation, comment this line back in.
         // "space-ship-model"
     };
 

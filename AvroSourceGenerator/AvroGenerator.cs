@@ -17,13 +17,13 @@ public class AvroGenerator : IIncrementalGenerator
     private readonly IEnumerable<string> _avroSchemasToGenerate = new HashSet<string>
     {
         "planet-enum",
-        
+
         // commented out for simplicity's sake. Just generate two for now, to keep things simple while debugging the avro fork.
-        // "solar-system-model",
-        
+        "solar-system-model",
+
         // This is commented out to make the generator succeed so that the unit tests can be run.
         // To test the source generation, comment this line back in.
-        // "space-ship-model"
+        "space-ship-model"
     };
 
     public void Initialize(IncrementalGeneratorInitializationContext initContext)
@@ -33,13 +33,13 @@ public class AvroGenerator : IIncrementalGenerator
             .Where(file => _avroSchemasToGenerate.Contains(Path.GetFileNameWithoutExtension(file.Path)));
 
         var schemaFileNameAndContents = schemaFiles.Select(
-            static (file, cancellationToken) =>
-                (name: Path.GetFileNameWithoutExtension(file.Path),
-                    content: file.GetText(cancellationToken)!.ToString()));
+                static (file, cancellationToken) =>
+                    (name: Path.GetFileNameWithoutExtension(file.Path),
+                        content: file.GetText(cancellationToken)!.ToString()))
+            .Collect();
 
         initContext.RegisterSourceOutput(schemaFileNameAndContents,
-            static (spc, nameAndContent) =>
-                spc.AddSource($"AvroGeneratedSchemas.{nameAndContent.name}",
-                    AvroUtils.GenerateSourceCode(nameAndContent.content)));
+            static (spc, namesAndContents) =>
+                spc.AddSource("AvroGeneratedSchemas", AvroUtils.GenerateSourceCode(namesAndContents)));
     }
 }

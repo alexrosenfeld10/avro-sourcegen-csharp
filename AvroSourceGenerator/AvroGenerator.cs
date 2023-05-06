@@ -41,8 +41,11 @@ public class AvroGenerator : IIncrementalGenerator
         initContext.RegisterSourceOutput(schemaFileNameAndContents,
             static (spc, namesAndContents) =>
             {
-                // TODO change AvroUtils.GenerateSourceCode to return a list, so we can add sources for each file individually.
-                spc.AddSource("AvroGeneratedSchemas", AvroUtils.GenerateSourceCode(namesAndContents));
+                var generatedSources = AvroUtils.GenerateSourceCode(namesAndContents);
+                foreach (var (name, code) in generatedSources)
+                {
+                    spc.AddSource($"AvroGenerated_{name}", code);
+                }
             });
     }
 }

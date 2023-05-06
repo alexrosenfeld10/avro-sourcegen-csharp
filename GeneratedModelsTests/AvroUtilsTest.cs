@@ -15,8 +15,10 @@ public class AvroUtilsTest
             ("solar-system-model", File.ReadAllText("./solar-system-model.json"))
         }.ToImmutableArray();
 
-        var sourceCode = AvroUtils.GenerateSourceCode(schemaNamesAndContents);
+        var generatedSources = AvroUtils.GenerateSourceCode(schemaNamesAndContents);
 
-        Assert.True(Regex.Matches(sourceCode, "public enum PlanetEnum").Count == 1);
+        var planetEnumDefinitionCount =
+            generatedSources.Sum(tuple => Regex.Matches(tuple.code, "public enum PlanetEnum").Count);
+        Assert.Equal(1, planetEnumDefinitionCount);
     }
 }

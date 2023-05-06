@@ -14,7 +14,6 @@ public class ModelsTest
         Assert.Equal(PlanetEnum.Earth, foo);
     }
 
-
     [Fact]
     public void SpaceShipModelExists()
     {
@@ -46,6 +45,4 @@ public class ModelsTest
         };
         Assert.Equal("Our Solar System", ourSolarSystem.Name);
     }
-
-    // TODO add a similar test here for the various models that depend on the PlanetEnum, like the SpaceShip model
 }

@@ -17,8 +17,10 @@ public class AvroUtilsTest
 
         var generatedSources = AvroUtils.GenerateSourceCode(schemaNamesAndContents);
 
+        var planetEnumKeyCount = generatedSources.Count(kvp => kvp.Key == "PlanetEnum");
+        Assert.Equal(1, planetEnumKeyCount);
         var planetEnumDefinitionCount =
-            generatedSources.Sum(tuple => Regex.Matches(tuple.code, "public enum PlanetEnum").Count);
+            generatedSources.Sum(kvp => Regex.Matches(kvp.Value, "public enum PlanetEnum").Count);
         Assert.Equal(1, planetEnumDefinitionCount);
     }
 }

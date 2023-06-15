@@ -12,7 +12,8 @@ public class AvroUtilsTest
         var schemaNamesAndContents = new[]
         {
             ("planet-enum", File.ReadAllText("./planet-enum.json")),
-            ("solar-system-model", File.ReadAllText("./solar-system-model.json"))
+            ("solar-system-model", File.ReadAllText("./solar-system-model.json")),
+            ("zzplanet-enum", File.ReadAllText("./zzplanet-enum.json"))
         }.ToImmutableArray();
 
         var generatedSources = AvroUtils.GenerateSourceCode(schemaNamesAndContents);

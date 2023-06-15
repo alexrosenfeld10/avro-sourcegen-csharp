@@ -10,8 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all"/>
-        <PackageReference Include="H.Generators.Extensions" Version="1.11.0" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all" />
+        <PackageReference Include="H.Generators.Extensions" Version="1.11.0" PrivateAssets="all" />
 
         <!-- <PackageReference Include="Apache.Avro" Version="1.11.1" PrivateAssets="all" />-->
 
@@ -28,6 +28,10 @@
             <add key="custom-locals" value="~/.nuget/custom-local-packages" />
         as a <packageSources> element in your ~/.nuget/NuGet/NuGet.Config file
         -->
-        <PackageReference Include="Apache.Avro" Version="2.2.0-local" PrivateAssets="all"/>
+<!--        <PackageReference Include="Apache.Avro" Version="2.2.0-local" PrivateAssets="all"/>-->
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\avro\lang\csharp\src\apache\main\Avro.main.csproj" />
     </ItemGroup>
 </Project>

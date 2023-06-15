@@ -13,6 +13,13 @@
         "type": "array",
         "items": "Space.Models.PlanetEnum"
       }
+    },
+    {
+      "name": "ZzPlanets",
+      "type": {
+        "type": "array",
+        "items": "Space.Models.ZzPlanetEnum"
+      }
     }
   ]
 }
